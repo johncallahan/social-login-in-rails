@@ -33,4 +33,8 @@ class Authorization < ApplicationRecord
 	def fetch_details_from_google_oauth2
 
 	end
+
+	def fetch_details_from_openid_connect
+		
+	end
 end
