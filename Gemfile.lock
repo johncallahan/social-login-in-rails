@@ -1,5 +1,6 @@
-PATH
-  remote: ../omniauth_openid_connect
+GIT
+  remote: git://github.com/johncallahan/omniauth_openid_connect.git
+  revision: c5c9816cff5204355e62fb2fe1384fae56b3dcaf
   specs:
     omniauth_openid_connect (0.3.2)
       addressable (~> 2.5)
