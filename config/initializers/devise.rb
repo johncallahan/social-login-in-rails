@@ -33,7 +33,7 @@ Devise.setup do |config|
   config.omniauth :linkedin, ENV["LINKEDIN_KEY"], ENV["LINKEDIN_SECRET"], { :scope => 'r_basicprofile r_emailaddress', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   config.omniauth :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: "user, public_repo"
   config.omniauth :google_oauth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET'], {}
-  config.omniauth :openid_connect, {:scope => 'email', :discovery => true, :issuer => "http://localhost:3001"}
+  config.omniauth :openid_connect, {:scope => [:openid, :email, :profile, :address], :response_type => :code, :discovery => true, :client_options => {:redirect_uri => ENV["OIDC_URL"], :identifier => ENV["OIDC_KEY"], :secret => ENV["OIDC_SECRET"], :host => ENV["OIDC_HOST"], :scheme => ENV["OIDC_SCHEME"], :port => ENV["OIDC_PORT"]}}
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
